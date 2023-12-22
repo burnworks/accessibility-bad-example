@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>フォーカス可視化がされてないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+
+    .text-area {
+      font-size: 1rem;
+    }
+
+    .text-area *:focus {
+      outline: none;
+      outline-color: transparent;
+    }
+
+    .text-area a {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+
+    .link-item {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .link-item li {
+      margin: 1rem 0;
+    }
+
+    .link-item a {
+      display: inline-block;
+      border: 1px solid #0d47a1;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: .3rem;
+      color: #fff;
+      background-color: #0d47a1;
+      text-decoration: none;
+    }
+
+    .link-item a:hover {
+      background-color: #3730a3;
+    }
+
+    .link-item a:focus {
+      outline: none;
+      outline-color: transparent;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>フォーカスの可視化がされていない場合のストレスを体験してください</h1>
+    <div class="description">
+      <p>
+        下記の文章内にはいくつかのリンクがあり、すべてキーボードによるフォーカスは可能ですが、わざとフォーカスインジケータが表示されないようにしています。
+      </p>
+      <p>
+        どこにフォーカスが当たっているのかがわからないと、とても不便だということを体感してください。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>会社説明会のお知らせ</h2>
+        <p>
+          このテキストはフォーカス可視化がされていないと、どのくらい不便なのかを提示するサンプルですが、架空の会社説明会に関する案内ページを想定しています。
+        </p>
+        <h3>開催場所</h3>
+        <p>本社大会議室</p>
+        <p>本社へのアクセス方法は「<a href="./">本社アクセスマップ</a>」をご確認ください。</p>
+        <h3>開催日時</h3>
+        <p>11月10日 14時開場 / 14時半開始</p>
+        <h3>参加申込み</h3>
+        <p>ご興味のある職種ごとに下記のボタンからお申し込みください。</p>
+        <ul class="link-item">
+          <li>
+            <a href="./">営業職</a>
+          </li>
+          <li>
+            <a href="./">研究・開発職</a>
+          </li>
+          <li>
+            <a href="./">経理・事務職</a>
+          </li>
+          <li>
+            <a href="./">カスタマーサポート職</a>
+          </li>
+          <li>
+            <a href="./">希望職種未定</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

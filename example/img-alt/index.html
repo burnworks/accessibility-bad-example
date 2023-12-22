@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>画像の代替テキスト有無による表示サンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    .wrap {
+      text-align: center;
+    }
+
+    .item {
+      padding: 2rem;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.125rem;
+      background-color: #bbf7d0;
+    }
+
+    .label.no-alt {
+      background-color: #fecaca;
+    }
+
+    .item img {
+      max-width: 100%;
+      border: 1px solid #0d47a1;
+    }
+
+    .btn {
+      text-align: center;
+    }
+
+    button {
+      display: inline-block;
+      border: 1px solid #0d47a1;
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: .3rem;
+      color: #fff;
+      background-color: #0d47a1;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline-style: solid;
+      outline-color: #b91c1c;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>画像の代替テキスト有無による表示を体感</h1>
+    <div class="description">
+      <p>
+        画像に正しく代替テキストが設定されていないと、視覚的に認知できないユーザー（読み上げ環境などを利用しているユーザー）はもちろん、何らかの理由で画像が表示されなかった場合に「そこになにがあるのか」が伝わりません。
+      </p>
+      <p>
+        しかし、装飾など、情報としての意味を持たない画像については、<code>alt=""</code> のように、代替テキストをあえて空にするのが正しいです。
+      </p>
+    </div>
+
+    <div class="btn">
+      <button id="image-not-found">画像をリンク切れにする</button>
+    </div>
+
+    <div class="wrap">
+      <div class="item">
+        <span class="label">代替テキストあり</span>
+        <p><img src="./sample-01.jpg" alt="写真：河口湖の湖面に映る富士山"></p>
+      </div>
+      <div class="item">
+        <span class="label">代替テキストあり</span>
+        <p><img src="./sample-02.jpg" alt="写真：東京タワーを下から見上げて撮影"></p>
+      </div>
+      <div class="item">
+        <span class="label no-alt">代替テキストなし</span>
+        <p><img src="./sample-01.jpg" alt=""></p>
+      </div>
+      <div class="item">
+        <span class="label no-alt">代替テキストなし</span>
+        <p><img src="./sample-02.jpg" alt=""></p>
+      </div>
+    </div>
+
+    <div class="btn">
+      <button id="reset">リセット</button>
+    </div>
+  </main>
+  <script>
+    const btn = document.getElementById('image-not-found');
+    const imgs = document.querySelectorAll('img');
+    btn.addEventListener('click', () => {
+      imgs.forEach((img) => {
+        img.setAttribute('src', 'sample-03.jpg');
+      });
+    });
+
+    const reset = document.getElementById('reset');
+    reset.addEventListener('click', () => {
+      location.reload();
+    });
+  </script>
+
+</body>
+
+</html>

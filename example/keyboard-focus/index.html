@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>キーボード操作によるフォーカス可能/不可能のサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      padding: 20px;
+    }
+
+    .item>*:focus {
+      outline-style: solid;
+      outline-color: #b91c1c;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+
+    .item>*:hover {
+      cursor: pointer;
+    }
+
+    .item>* {
+      display: inline-block;
+      border: 1px solid #0d47a1;
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: .3rem;
+      color: #fff;
+      background-color: #0d47a1;
+    }
+
+    .item a {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>キーボード操作でフォーカスできる or できない</h1>
+    <div class="description">
+      <p>
+        見た目は同じようなボタンに見えても、正しく実装されていないとキーボードによるフォーカスを受け取りません。
+        <code>div</code> や <code>span</code> 要素でボタン（のようなもの）を実装せず、<code>button</code> や <code>a</code> 要素を正しく用いましょう。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="item">
+        <div>フォーカスできない</div>
+      </div>
+      <div class="item">
+        <a href="./">フォーカスできるリンク</a>
+      </div>
+      <div class="item">
+        <button>フォーカスできるボタン</button>
+      </div>
+      <div class="item">
+        <span>フォーカスできない</span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
