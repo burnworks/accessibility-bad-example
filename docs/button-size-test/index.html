@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ボタンサイズのテスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .wrap h2 {
+      font-size: 1.25rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .description {
+      max-width: 50rem;
+      text-align: center;
+      margin: 2rem auto;
+    }
+
+    .wrap {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .wrap>*+* {
+      margin-top: 0.625rem;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 0.625rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.25rem;
+    }
+
+    .item>*+* {
+      border: none;
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-left-color: #e5e7eb;
+    }
+
+    .item>div {
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:focus {
+      outline-style: solid;
+      outline-color: #b91c1c;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+    }
+
+    .btn {
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #030712;
+      padding: 0;
+      color: #fff;
+      background-color: #b91c1c;
+    }
+
+    .btn.c {
+      border-radius: 9999px;
+    }
+
+    .btn.size-1 {
+      /* 4px相当 */
+      width: 0.25rem;
+      height: 0.25rem;
+    }
+
+    .btn.size-2 {
+      /* 8px相当 */
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    .btn.size-3 {
+      /* 16px相当 */
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .btn.size-4 {
+      /* 20px相当 */
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .btn.size-5 {
+      /* 24px相当 */
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .btn.size-6 {
+      /* 36px相当 */
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>ボタンサイズ</h1>
+    <div class="description">
+      <p>
+        ボタンサイズが小さすぎる場合の操作性について検証
+      </p>
+    </div>
+
+    <div class="wrap">
+
+      <h2>円形</h2>
+
+      <div class="item">
+        <div>
+          4px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-1">
+            <span class="sr-only">Button 01</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          8px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-2">
+            <span class="sr-only">Button 02</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          16px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-3">
+            <span class="sr-only">Button 03</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          20px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-4">
+            <span class="sr-only">Button 04</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          24px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-5">
+            <span class="sr-only">Button 05</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          36px（相当）四方
+        </div>
+        <div>
+          <button class="btn c size-6">
+            <span class="sr-only">Button 06</span>
+          </button>
+        </div>
+      </div>
+
+      <h2>四角形</h2>
+
+      <div class="item">
+        <div>
+          4px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-1">
+            <span class="sr-only">Button 01</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          8px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-2">
+            <span class="sr-only">Button 02</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          16px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-3">
+            <span class="sr-only">Button 03</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          20px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-4">
+            <span class="sr-only">Button 04</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          24px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-5">
+            <span class="sr-only">Button 05</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          36px（相当）四方
+        </div>
+        <div>
+          <button class="btn size-6">
+            <span class="sr-only">Button 06</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
