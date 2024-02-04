@@ -8,8 +8,30 @@
 
   <style>
     body {
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
     }
 
     h1 {
@@ -75,6 +97,29 @@
       outline: none;
       outline-color: transparent;
     }
+
+    .end {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .end button {
+      display: inline-block;
+      border: 1px solid #0d47a1;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: .3rem;
+      color: #fff;
+      background-color: #0d47a1;
+      text-decoration: none;
+    }
+
+    .end button:focus {
+      outline-style: solid;
+      outline-color: #b91c1c;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
   </style>
 
 </head>
@@ -123,7 +168,16 @@
         </ul>
       </div>
     </div>
+    <div class="end">
+      <button>
+        このボタンはフォーカスインジケータが表示されます
+      </button>
+    </div>
   </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
 </body>
 
 </html>
