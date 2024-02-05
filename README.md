@@ -7,3 +7,5 @@
   見た目は同じなのに実装方法によってキーボードによる操作ができなくなる例を確認できます。
 - [フォーカス可視化がされてないサンプル](https://burnworks.github.io/accessibility-bad-example/focus-visible/)  
   フォーカスの可視化がされていない場合のストレスを体験してください。
+- [ボタンサイズのテスト](https://burnworks.github.io/accessibility-bad-example/button-size-test/)  
+  ボタンサイズが小さすぎる場合の操作性について検証します（ボタンサイズを色々と変えて羅列しているだけです）。
