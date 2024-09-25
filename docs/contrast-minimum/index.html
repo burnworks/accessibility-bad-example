@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>達成基準 1.4.3 コントラスト（最低限）のサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    .list {
+      max-width: 50rem;
+      margin: 4rem auto;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .list li {
+      padding: 0.5rem 1rem;
+    }
+
+    .text-white {
+      color: #ffffff;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>達成基準 1.4.3 コントラスト（最低限）のサンプル</h1>
+    <div class="description">
+      <p>
+        様々な背景色、文字色の組み合わせと、その組み合わせにおけるコントラスト比が、達成基準 1.4.3 コントラスト（最低限）を満たしているかについて、以下に羅列しています。
+      </p>
+    </div>
+
+    <ul class="list">
+      <li class="text-white" style="background-color: #d4d4d4;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 1.48 : 1
+      </li>
+      <li class="text-white" style="background-color: #737373;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 4.74 : 1
+      </li>
+      <li class="text-white" style="background-color: #525252;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 7.81 : 1
+      </li>
+      <li class="text-white" style="background-color: #404040;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 10.37 : 1
+      </li>
+      <li class="text-white" style="background-color: #171717;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 17.93 : 1
+      </li>
+
+      <li class="text-white" style="background-color: #ef4444;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 3.76 : 1
+      </li>
+      <li class="text-white" style="background-color: #f97316;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 2.80 : 1
+      </li>
+      <li class="text-white" style="background-color: #22c55e;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 2.28 : 1
+      </li>
+      <li class="text-white" style="background-color: #0ea5e9;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 2.77 : 1
+      </li>
+      <li class="text-white" style="background-color: #3b82f6;">
+        <span alia-label="NG">🙅‍♂️</span> コントラスト比： 3.68 : 1
+      </li>
+
+      <li class="text-white" style="background-color: #dc2626;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 4.83 : 1
+      </li>
+      <li class="text-white" style="background-color: #c2410c;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 5.18 : 1
+      </li>
+      <li class="text-white" style="background-color: #15803d;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 5.02 : 1
+      </li>
+      <li class="text-white" style="background-color: #0369a1;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 5.93 : 1
+      </li>
+      <li class="text-white" style="background-color: #2563eb;">
+        <span alia-label="OK">🙆‍♂️</span> コントラスト比： 5.17 : 1
+      </li>
+    </ul>
+
+    <div class="wrap">
+      <div class="section-header">
+        <h2>参考： WCAG におけるコントラストに関する達成基準</h2>
+      </div>
+      <dl>
+        <div>
+          <dt>達成基準 1.4.3 コントラスト（最低限） （WCAG 2.0, 2.1, 2.2 および
+            JIS X 8341-3:2016 / レベル AA）</dt>
+          <dd>
+            <p>テキスト及び文字画像の視覚的提示には、少なくとも <strong>4.5 : 1</strong> のコントラスト比がある（附随的、ロゴタイプを除く）。</p>
+            <p>（大きな文字）サイズの大きなテキスト及びサイズの大きな文字画像には、少なくとも <strong>3:1</strong> のコントラスト比がある。</p>
+          </dd>
+        </div>
+        <div>
+          <dt>達成基準 1.4.6 コントラスト（高度） （WCAG 2.0, 2.1, 2.2 および
+            JIS X 8341-3:2016 / レベル AAA）</dt>
+          <dd>
+            <p>テキスト及び文字画像の視覚的提示には、少なくとも <strong>7 : 1</strong> のコントラスト比がある（附随的、ロゴタイプを除く）。</p>
+            <p>（大きな文字）サイズの大きなテキスト及びサイズの大きな文字画像には、少なくとも <strong>4.5:1</strong> のコントラスト比がある。</p>
+          </dd>
+        </div>
+        <div>
+          <dt>達成基準 1.4.11 非テキストのコントラスト （WCAG 2.1, 2.2 / レベル
+            AA）</dt>
+          <dd>
+            <p>ユーザインタフェース コンポーネント、およびグラフィカルオブジェクトにおいて、隣接した色との間で少なくとも <strong>3 : 1</strong> のコントラスト比がある。</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>
