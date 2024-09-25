@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>色の使用の達成基準が満たされていないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+
+    .text-area {
+      font-size: 1rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    input {
+      width: 20rem;
+      border: 1px solid #374151;
+      padding: 0.25rem;
+      border-radius: 0.125rem;
+      max-width: 100%;
+    }
+
+    .form-name {
+      border-color: #b91c1c;
+    }
+
+    .form-address {
+      width: 30rem;
+    }
+
+    .err-link-01 {
+      color: #27272a;
+      text-decoration: none;
+    }
+
+    .err-link-01:focus {
+      outline: none;
+      outline-color: transparent;
+      text-decoration: none;
+      color: #991b1b;
+    }
+
+    .ok-link-01 {
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    .ok-link-01:focus {
+      text-decoration: none;
+    }
+
+    .best-link-01 {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .best-link-01:hover {
+      color: #991b1b;
+      text-decoration: none;
+    }
+
+    .best-link-01:focus {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>色のみで情報が伝えられている例を体験してください</h1>
+    <div class="wrap">
+      <div class="text-area">
+        <h2>色のみで入力必須を判別させる例</h2>
+        <p>
+          赤い枠の入力項目は必須項目です。
+        </p>
+        <p>
+          <label>氏名
+            <input type="text" name="name" class="form-name" />
+          </label>
+        </p>
+        <p>
+          <label>住所
+            <input type="text" name="address" class="form-address" />
+          </label>
+        </p>
+        <p>
+          <label>電話番号
+            <input type="tel" name="tel" class="form-tel" />
+          </label>
+        </p>
+        <p>
+          ※「入力必須」であることを伝えたい場合、色のみではなく、以下のように、当該入力欄に『必須』という文言を含むラベルを付ける、HTML の required 属性を使用するといった手法を併用します。
+        </p>
+        <h2>正しい実装例</h2>
+        <p>
+          「（必須）」と記載の入力項目は必須項目です。
+        </p>
+        <p>
+          <label>氏名（必須）
+            <input type="text" name="name" required />
+          </label>
+        </p>
+        <p>
+          <label>住所
+            <input type="text" name="address" class="form-address" />
+          </label>
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>色のみでリンクテキストを判別させる例</h2>
+        <p>
+          以下の文章は色覚なしで視覚的にはっきりと分からないリンクを作成した例（達成基準 1.4.1 を満たさない例）と、問題を解決したリンクの例です。
+        </p>
+        <h3>達成基準 1.4.1 を満たさない例</h3>
+        <p>
+          この文章の中にはリンクテキストが含まれていますが、周囲の文章と<a href="./" class="err-link-01">リンクテキスト</a>が微妙な色の違い以外では一切区別されていません。
+        </p>
+        <h3>達成基準 1.4.1 をコントラスト比で達成する例</h3>
+        <p>
+          この文章の中にはリンクテキストが含まれていて、色のみで区別されていますが、周囲の文章とのコントラスト比が 3:1 以上あるので、
+          この<a href="./" class="ok-link-01">リンクテキスト</a>は達成基準を満たします。<br />
+          また、フォーカス時に枠線を表示するなど、追加の視覚情報（色の違い以外）を提供することも重要です。
+        </p>
+        <h3>達成基準 1.4.1 を満たす最もよい例</h3>
+        <p>
+          最もよい実装は、<a href="./" class="best-link-01">リンクテキスト</a>に下線を引くなどして周囲の文章と色以外の情報を用いて判別可能にすることです。
+        </p>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>
