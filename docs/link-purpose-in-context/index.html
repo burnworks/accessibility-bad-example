@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>リンクの目的（コンテキスト内）の達成基準が満たされていないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+
+    .text-area {
+      font-size: 1rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    input {
+      width: 20rem;
+      border: 1px solid #374151;
+      padding: 0.25rem;
+      border-radius: 0.125rem;
+      max-width: 100%;
+    }
+
+    .form-name {
+      border-color: #b91c1c;
+    }
+
+    .form-address {
+      width: 30rem;
+    }
+
+    .err-link-01 {
+      color: #27272a;
+      text-decoration: none;
+    }
+
+    .err-link-01:focus {
+      outline: none;
+      outline-color: transparent;
+      text-decoration: none;
+      color: #991b1b;
+    }
+
+    .ok-link-01 {
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    .ok-link-01:focus {
+      text-decoration: none;
+    }
+
+    .best-link-01 {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .best-link-01:hover {
+      color: #991b1b;
+      text-decoration: none;
+    }
+
+    .best-link-01:focus {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>リンクの目的（コンテキスト内）の達成基準が満たされていない例と改善案</h1>
+    <div class="wrap">
+      <div class="text-area">
+        <h2>架空のニュースタイトル（悪い例）</h2>
+        <p>
+          ニュース記事などの概要文がここに記述されているとします。ニュースの内容の要約を数行のテキストにまとめたようなものです。
+        </p>
+        <p>
+          [ここに画像などがあるとします]
+        </p>
+        <p>
+          <a href="./" class="best-link-01">続きを読む</a>
+        </p>
+      </div>
+    </div>
+    <div class="description">
+      <p>
+        上記の例の様に、異なる段落など、概要文から少し離れた箇所に「続きを読む」だけをリンクテキストとしたリンクがある場合、前後の文脈を考慮してもリンクの目的が不明瞭と判断されると考えます。
+      </p>
+      <p>
+        概要文のすぐ後ろ（同じ段落）にリンクがあれば、「今まで読んできた概要文」の「続きを読む」なんだなと理解できると思いますが、離れてしまうとそういったことがわかりにくくなるので注意が必要です。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>改善案（1）</h2>
+        <p>
+          ニュース記事などの概要文がここに記述されているとします。ニュースの内容の要約を数行のテキストにまとめたようなものです。（ <a href="./" class="best-link-01">続きを読む</a>）
+        </p>
+        <p>
+          [ここに画像などがあるとします]
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>改善案（2）</h2>
+        <p>
+          ニュース記事などの概要文がここに記述されているとします。ニュースの内容の要約を数行のテキストにまとめたようなものです。
+        </p>
+        <p>
+          [ここに画像などがあるとします]
+        </p>
+        <p>
+          <a href="./" class="best-link-01">「ニュースタイトル」の記事全文を読む</a>
+        </p>
+      </div>
+    </div>
+    <div class="description">
+      <p>
+        改善案（1）は概要文のすぐ後ろ（同じ段落）にリンクを置いた例です。前述の通り、この配置であれば「今まで読んできた概要文」の「続きを読む」なんだなと理解できると思います。
+      </p>
+      <p>
+        改善案（2）は、リンク単体でもリンクの目的がわかるようにした例です。本来はこのように、リンク単体だけでなんのためのリンクなのかがわかるようにするのが望ましいでしょう。もちろん <code>aria-label</code>
+        属性などを併用しても良いです。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>書籍タイトル</h2>
+        <p>
+          書籍はHTML版、PDF版、音声版（mp3）のいずれかでダウンロードできます。
+        </p>
+        <ul>
+          <li><a href="./" class="best-link-01">HTML版</a></li>
+          <li><a href="./" class="best-link-01">PDF版</a></li>
+          <li><a href="./" class="best-link-01">音声版（mp3）</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="description">
+      <p>
+        上記のような例の場合であれば、見出しと前段のテキストから、リンクの目的は理解できると考えても問題ないでしょう。各リンクに書籍名を繰り返し入れると冗長な場合などは直近の見出しなどでリンクの目的がわかるようにしましょう。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>惜しい例</h2>
+        <p>
+          詳しいお申し込み方法は、「●●大会への申込み手順」のページに記載しておりますので<a href="./" class="best-link-01">そちら</a>をご覧ください。
+        </p>
+        <p>
+          ●●大会への申込み手順は<a href="./" class="best-link-01">こちら</a>。
+        </p>
+        <h2>改善案</h2>
+        <p>
+          詳しいお申し込み方法は、<a href="./" class="best-link-01">「●●大会への申込み手順」のページ</a>に記載しておりますのでそちらをご覧ください。
+        </p>
+        <p>
+          <a href="./" class="best-link-01">●●大会への申込み手順はこちら</a>。
+        </p>
+      </div>
+    </div>
+    <div class="description">
+      <p>
+        最初の例でも前後の文脈を考えれば（好ましくはないものの）達成基準を満たすと考えることもできますが、どこにリンクを張るかを工夫することで「単体でも」わかりやすいリンクになります。常に想像力を働かせましょう。
+      </p>
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>

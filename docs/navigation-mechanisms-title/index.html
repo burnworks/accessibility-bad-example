@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ページタイトルの達成基準が満たされていないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+
+    .text-area {
+      font-size: 1rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    input {
+      width: 20rem;
+      border: 1px solid #374151;
+      padding: 0.25rem;
+      border-radius: 0.125rem;
+      max-width: 100%;
+    }
+
+    .form-name {
+      border-color: #b91c1c;
+    }
+
+    .form-address {
+      width: 30rem;
+    }
+
+    .err-link-01 {
+      color: #27272a;
+      text-decoration: none;
+    }
+
+    .err-link-01:focus {
+      outline: none;
+      outline-color: transparent;
+      text-decoration: none;
+      color: #991b1b;
+    }
+
+    .ok-link-01 {
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    .ok-link-01:focus {
+      text-decoration: none;
+    }
+
+    .best-link-01 {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .best-link-01:hover {
+      color: #991b1b;
+      text-decoration: none;
+    }
+
+    .best-link-01:focus {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>ページタイトルの達成基準が満たされていない例と改善案</h1>
+    <div class="wrap">
+      <div class="text-area">
+        <h2>例えば会議の議事録が毎週1ページずつ更新されている場合の悪い例</h2>
+        <pre><code>&lt;title&gt;議事録 | サンプル株式会社&lt;/title&gt;</code></pre>
+        <p>
+          上記のようなページタイトルが大量にある場合、ページタイトルだけでは今閲覧しているページが何なのか判断できません。また、検索結果などでは下記のように表示され、どのページがいつの議事録なのか全くわからなくなります。
+        </p>
+        <ul>
+          <li><a href="./" class="best-link-01">議事録 | サンプル株式会社</a></li>
+          <li><a href="./" class="best-link-01">議事録 | サンプル株式会社</a></li>
+          <li><a href="./" class="best-link-01">議事録 | サンプル株式会社</a></li>
+        </ul>
+        <h2>改善案</h2>
+        <pre><code>&lt;title&gt;2024年7月1日 経営会議 議事録 | サンプル株式会社&lt;/title&gt;</code></pre>
+        <p>
+          上記のようにページタイトルに日付けや何の議事録なのかがわかる情報を入れることで、ページタイトルだけでページの内容が判断可能になり、検索結果などでも目的のページが探しやすくなります。
+        </p>
+        <ul>
+          <li><a href="./" class="best-link-01">2024年7月1日 経営会議 議事録 | サンプル株式会社</a></li>
+          <li><a href="./" class="best-link-01">2024年6月1日 経営会議 議事録 | サンプル株式会社</a></li>
+          <li><a href="./" class="best-link-01">2024年5月1日 経営会議 議事録 | サンプル株式会社</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>タイトルの構造にも注意</h2>
+        <pre><code>&lt;title&gt;サンプル株式会社 定例経営会議 議事録 開催日 2024年7月1日分&lt;/title&gt;</code></pre>
+        <p>
+          ページタイトル全体としては一意でも、検索結果で省略されたりした場合にわかりにくくなるケースも想定するとなお良いです。
+        </p>
+        <ul>
+          <li><a href="./" class="best-link-01">サンプル株式会社 定例経営会議 議事録 開催日 20…</a></li>
+          <li><a href="./" class="best-link-01">サンプル株式会社 定例経営会議 議事録 開催日 20…</a></li>
+          <li><a href="./" class="best-link-01">サンプル株式会社 定例経営会議 議事録 開催日 20…</a></li>
+        </ul>
+        <h2>改善案</h2>
+        <pre><code>&lt;title&gt;2024年7月1日 定例経営会議 議事録 | サンプル株式会社&lt;/title&gt;</code></pre>
+        <p>
+          ページの選定に役立つ一意な情報をなるべく先頭に記述することで、仮にタイトルが省略表示されてもわかりにくくなりません。
+        </p>
+        <ul>
+          <li><a href="./" class="best-link-01">2024年7月1日開催 定例経営会議 議事録 | サン…</a></li>
+          <li><a href="./" class="best-link-01">2024年6月1日開催 定例経営会議 議事録 | サン…</a></li>
+          <li><a href="./" class="best-link-01">2024年5月1日開催 定例経営会議 議事録 | サン…</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>

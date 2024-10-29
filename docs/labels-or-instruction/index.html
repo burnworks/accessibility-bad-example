@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ラベル又は説明の達成基準が満たされていないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    .wrap {
+      max-width: 65rem;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-radius: .5rem;
+    }
+
+    .text-area {
+      font-size: 1rem;
+    }
+
+    input:not([type="radio"]) {
+      width: 20rem;
+      border: 1px solid #374151;
+      padding: 0.25rem;
+      border-radius: 0.125rem;
+      max-width: 100%;
+    }
+
+    input.form-name {
+      width: 10rem;
+    }
+
+    input.form-name+input.form-name {
+      margin-left: 1rem;
+    }
+
+    dd ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dd+dt {
+      margin-top: 1rem;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: relative;
+    }
+
+    legend {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .note {
+      font-size: 0.75rem;
+    }
+
+    .form-address {
+      width: 30rem;
+    }
+
+    .err-link-01 {
+      color: #27272a;
+      text-decoration: none;
+    }
+
+    .err-link-01:focus {
+      outline: none;
+      outline-color: transparent;
+      text-decoration: none;
+      color: #991b1b;
+    }
+
+    .ok-link-01 {
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    .ok-link-01:focus {
+      text-decoration: none;
+    }
+
+    .best-link-01 {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .best-link-01:hover {
+      color: #991b1b;
+      text-decoration: none;
+    }
+
+    .best-link-01:focus {
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>ラベル又は説明の達成基準を満たさない例と改善案</h1>
+    <div class="wrap">
+      <div class="text-area">
+        <h2>お申し込みフォーム（悪い例）</h2>
+        <dl>
+          <dt>氏名（必須）</dt>
+          <dd>
+            <input type="text" name="name" class="form-name" placeholder="姓">
+            <input type="text" name="name" class="form-name" placeholder="名">
+          </dd>
+          <dt>住所（必須）</dt>
+          <dd>
+            <input type="text" name="address" class="form-address" placeholder="住所">
+          </dd>
+          <dt>性別</dt>
+          <dd>
+            <ul>
+              <li><input type="radio" name="gender"> 男性</li>
+              <li><input type="radio" name="gender"> 女性</li>
+              <li><input type="radio" name="gender"> 未回答</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>お申し込みフォーム（正しい実装例）</h2>
+        <dl>
+          <dt><label for="last-name">氏名（姓）・（必須）</label></dt>
+          <dd>
+            <input type="text" id="last-name" name="last-name" class="form-name" placeholder="日本" required>
+          </dd>
+          <dt><label for="first-name">氏名（名）・（必須）</label></dt>
+          <dd>
+            <input type="text" id="first-name" name="first-name" class="form-name" placeholder="太郎" required>
+          </dd>
+          <dt><label for="address">住所（必須）</label></dt>
+          <dd>
+            <p class="note" id="address-note">住所は建物名や部屋番号まで正しく入力してください。</p>
+            <input type="text" id="address" name="address" class="form-address" placeholder="東京都●●区●● 1-2-3 ●●ビル 5階"
+              required aria-describedby="address-note">
+          </dd>
+          <dt>性別</dt>
+          <dd>
+            <fieldset>
+              <legend>性別</legend>
+              <ul>
+                <li>
+                  <label><input type="radio" name="gender" /> 男性</label>
+                </li>
+                <li>
+                  <label><input type="radio" name="gender" /> 女性</label>
+                </li>
+                <li>
+                  <label><input type="radio" name="gender" /> 未回答</label>
+                </li>
+              </ul>
+            </fieldset>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="description">
+      <p>
+        氏名などを、姓・名で分けて入力させたり、郵便番号や電話番号を桁ごとに入力欄を分けるようなことは多いですが、それぞれに個別（一意）のラベルを付ける必要があります。例えば「郵便番号（3桁）」「郵便番号（4桁）」のようにします。しかし、複雑に分かれた入力フォームはユーザーにとってはわかりにくくなりますので、なるべくシンプルに設計しましょう。
+      </p>
+      <p>
+        また、placeholder 属性をラベルのように使用してはいけません。placeholder 属性はあくまで「入力内容のヒント」を記述すべきです。
+      </p>
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>
