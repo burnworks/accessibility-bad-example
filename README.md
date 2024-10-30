@@ -21,3 +21,5 @@
   達成基準 2.4.2 ページタイトルの達成基準が満たされていない例と改善案を提示。
 - [3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」サンプル](https://burnworks.github.io/accessibility-bad-example/seizure-does-not-violate/)  
   達成基準 2.3.1 3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」の例を提示。
+- [名前（name）・役割（role）及び値（value）の達成基準を満たさないサンプル](https://burnworks.github.io/accessibility-bad-example/ensure-compat-rsv/)  
+  達成基準 4.1.2 名前（name）・役割（role）及び値（value）の達成基準を満たさないサンプルを提示。

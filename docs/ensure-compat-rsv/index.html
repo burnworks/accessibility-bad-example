@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>名前（name）・役割（role）及び値（value）の達成基準を満たさないサンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .code {
+      display: flex;
+      flex-direction: column;
+      max-width: 74rem;
+      margin: 2rem auto;
+      padding: 0.5rem 1rem;
+      background-color: #030712;
+      color: #fff;
+      border-radius: 0.75rem;
+    }
+
+    pre {
+      width: 100%;
+      overflow: auto;
+      padding: 0.5rem;
+    }
+
+    .item {
+      padding: 20px;
+    }
+
+    .item>*:focus {
+      outline-style: solid;
+      outline-color: #b91c1c;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+
+    .item>*:hover {
+      cursor: pointer;
+    }
+
+    .item>* {
+      display: inline-block;
+      border: 1px solid #0d47a1;
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: .3rem;
+      color: #fff;
+      background-color: #0d47a1;
+    }
+
+    .item a {
+      text-decoration: none;
+    }
+
+    .size-6 {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>名前（name）・役割（role）及び値（value）の達成基準を満たさないサンプル</h1>
+    <div class="description">
+      <p>
+        見た目は同じようなボタンに見えても、正しく実装されていないと名前（name）・役割（role）及び値（value）の達成基準を満たしません。
+        <code>div</code> や <code>span</code> 要素でボタン（のようなもの）を実装せず、<code>button</code> や <code>a</code>
+        要素を正しく用いましょう。また、アイコンボタンなどは中身が空になっているケースが多いので注意が必要です。
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="item">
+        <div>div要素でボタン</div>
+      </div>
+      <div class="item">
+        <div tabindex="0">div要素でボタン</div>
+      </div>
+      <div class="item">
+        <button>button要素でボタン（正しい）</button>
+      </div>
+      <div class="item">
+        <span>span要素でボタン</span>
+      </div>
+      <div class="item">
+        <div role="button" tabindex="0">div要素でボタン</div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="item">
+        <button class="sq-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="item">
+        <button class="sq-btn">
+          <svg role="img" aria-label="閉じる" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="size-6">
+            <title>閉じる</title>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+    <div class="code">
+      <pre tabindex="0"><code>&lt;!-- 役割（role）が正しくない --&gt;
+&lt;div&gt;div要素でボタン&lt;/div&gt;</code></pre>
+
+      <pre tabindex="0"><code>&lt;!-- 役割（role）が正しくない（tabindexでフォーカスはできるが） --&gt;
+&lt;div tabindex=&quot;0&quot;&gt;div要素でボタン&lt;/div&gt;</code></pre>
+
+      <pre tabindex="0"><code>&lt;button&gt;button要素でボタン（正しい）&lt;/button&gt;</code></pre>
+      <pre tabindex="0"><code>&lt;!-- 役割（role）が正しくない --&gt;
+&lt;span&gt;span要素でボタン&lt;/span&gt;</code></pre>
+
+      <pre tabindex="0"><code>&lt;!-- 役割（role）は正しいがこんなことするなら最初からbutton要素を使いましょう --&gt;
+&lt;div role=&quot;button&quot; tabindex=&quot;0&quot;&gt;div要素でボタン&lt;/div&gt;</code></pre>
+
+      <pre tabindex="0"><code>&lt;!-- 役割（role）は正しいが中身が空で名前（name）が不明 --&gt;
+&lt;button&gt;
+  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
+    &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M6 18 18 6M6 6l12 12&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+
+      <pre tabindex="0"><code>&lt;!-- aria-label, SVGのtitle要素などを適切に使用する --&gt;
+&lt;button&gt;
+  &lt;svg role=&quot;img&quot; aria-label=&quot;閉じる&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke-width=&quot;1.5&quot; stroke=&quot;currentColor&quot;&gt;
+    &lt;title&gt;閉じる&lt;/title&gt;
+    &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M6 18 18 6M6 6l12 12&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+
+    </div>
+
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>
