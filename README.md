@@ -19,3 +19,5 @@
   達成基準 3.3.2 ラベル又は説明の達成基準を満たさない例と改善案を提示。
 - [ページタイトルの達成基準が満たされていないサンプル](https://burnworks.github.io/accessibility-bad-example/navigation-mechanisms-title/)  
   達成基準 2.4.2 ページタイトルの達成基準が満たされていない例と改善案を提示。
+- [3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」サンプル](https://burnworks.github.io/accessibility-bad-example/seizure-does-not-violate/)  
+  達成基準 2.3.1 3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」の例を提示。

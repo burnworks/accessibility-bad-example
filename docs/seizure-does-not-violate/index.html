@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」サンプル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      color: #111827;
+    }
+
+    main {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      margin-top: auto;
+      background-color: #030712;
+      color: #fff;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+
+    .description {
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    .wrap {
+      margin: 2rem auto;
+    }
+
+    .text-area {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .sample01 {
+      width: 100%;
+      height: 100%;
+      max-width: 33vw;
+      max-height: 33vh;
+      aspect-ratio: 4/3;
+      margin: 2rem auto;
+      background-color: #f87171;
+      border: 1px solid #dc2626;
+    }
+
+    .sample02 {
+      width: 170px;
+      height: 127px;
+      aspect-ratio: 4/3;
+      margin: 2rem auto;
+      background-color: #f87171;
+      border: 1px solid #dc2626;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>3回の閃光、又は閾値以下の達成基準における「小さくて安全な領域」の例</h1>
+    <div class="description">
+      <p>
+        WCAG 2.1の達成方法集、「<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G176" target="_blank">G176: Keeping
+          the flashing area small enough</a>」において「閃光を放つが小さいもの」の達成基準を満たす基準が提示されている（下記引用・翻訳）。
+      </p>
+      <blockquote>
+        <p>ある1秒間において3回以上の閃光を放つものがあるが、閃光を放つ領域が視野10度（これは視界における中心視野に相当する）の25%未満である場合、自動的に達成基準を満たすことになる。</p>
+      </blockquote>
+      <blockquote>
+        <p><strong>ウェブコンテンツにおける小さくて安全な領域</strong><br>
+          最も一般的なディスプレイの解像度は1024x768ピクセルで、画面は約15～17型である。一般的な画面との距離（56～66センチメートル）で閲覧している際、視野10度はおおよそ341x256ピクセルの領域を占めることになる。
+        </p>
+      </blockquote>
+      <p>
+        以下は、この記述に基づき、「ウェブコンテンツにおける小さくて安全な領域」のサイズを示します。（安全のため点滅はさせていません）
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>ウェブコンテンツにおける小さくて安全な領域のサンプル</h2>
+        <div class="sample01">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="description">
+      <p>
+        上記で示した「ウェブコンテンツにおける小さくて安全な領域のサンプル」の場合、画面のサイズや解像度によって安全エリアが拡大・縮小するため、実際の点滅エリアが閾値を超えてしまう可能性もあります。
+      </p>
+      <p>
+        先ほど引用したWCAG 2.1 達成方法集 G176には、下記の記述もあります（下記引用・翻訳）。
+      </p>
+      <blockquote>
+        <p>基準は視野10度の25%
+          なので、<strong>（画面上に他に閃光を放つものがなければ）画面上で（どんな形であれ）21,824平方ピクセルの隣接した領域よりも小さい単一の閃光を放つものは、一般閃光)及び赤色閃光の閾値を下回っていることになる。</strong>
+        </p>
+      </blockquote>
+      <p>
+        以下は、この記述に基づき、「21,824平方ピクセル」に収まるサイズを示します。（安全のため点滅はさせていません）
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="text-area">
+        <h2>「21,824平方ピクセル」に収まるサイズのサンプル</h2>
+        <div class="sample02">
+
+        </div>
+      </div>
+    </div>
+    <div class="description">
+      <p>
+        なお、これらサイズはあくまで点滅が避けられない場合の目安であり、原則は「<strong>どの1秒間においても、コンテンツに3回よりも多く閃光を放つコンポーネントがないことを確認する</strong>」ことです。
+      </p>
+    </div>
+  </main>
+  <footer>
+    <p><a href="https://github.com/burnworks/accessibility-bad-example">burnworks/accessibility-bad-example: Collection
+        of Implementations with Web Accessibility Issues.</a></p>
+  </footer>
+</body>
+
+</html>
